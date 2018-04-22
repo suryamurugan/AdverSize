@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "255583274892",
+    "firebase_url": "https://adversize-e63c8.firebaseio.com",
+    "project_id": "adversize-e63c8",
+    "storage_bucket": "adversize-e63c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255583274892:android:c19b9bf5d857f3c9",
+        "android_client_info": {
+          "package_name": "ads.in.adversize.adversize"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255583274892-mu4h8gqcu72n4hn5bp8fru40pm36qfif.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ads.in.adversize.adversize",
+            "certificate_hash": "7efc652eae4fbc2313b433f941fb7f9222970a4d"
+          }
+        },
+        {
+          "client_id": "255583274892-il41465l937l3js07383i4mbqvd0jgc4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCicnFHeUq2fJdg4J4SV3cxrPAczJzT2xM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255583274892-il41465l937l3js07383i4mbqvd0jgc4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

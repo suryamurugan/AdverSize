@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ads.in.adversize.adversize.MediaDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+
+    <android.support.v7.widget.CardView
+        android:elevation="5dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <ImageView
+               android:padding="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="300dp"
+               android:src="@drawable/m" />
+
+           <LinearLayout
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="2dp"
+                   android:background="#333333"/>
+
+               <TextView
+                   android:padding="5dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Media Name"
+                   android:gravity="center"
+                   android:textSize="20dp"/>
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="1dp"
+                   android:background="#333333"/>
+
+           </LinearLayout>
+           <LinearLayout
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+
+               <TableLayout
+
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <TableRow>
+                       <TextView
+                           android:text="Size"
+                           android:textSize="15dp"
+                           android:padding="10dp"/>
+
+                       <TextView
+                           android:layout_marginLeft="30dp"
+                           android:padding="10dp"
+                           android:text="51*165 ft"
+                           android:textSize="15dp" />
+                   </TableRow>
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="1dp"
+                       android:background="#333333"/>
+
+                   <TableRow>
+                       <TextView
+                           android:text="Cost per Sq.Ft (# Months)"
+                           android:textSize="15dp"
+                           android:padding="10dp"/>
+
+                       <TextView
+                           android:layout_marginLeft="30dp"
+                           android:padding="10dp"
+                           android:text="200Rs"
+                           android:textSize="15dp" />
+                   </TableRow>
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="1dp"
+                       android:background="#333333"/>
+
+                   <TableRow>
+                       <TextView
+                           android:text="Type"
+                           android:textSize="15dp"
+                           android:padding="10dp"/>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginLeft="30dp"
+                           android:padding="10dp"
+                           android:text="BillBoard"
+                           android:textSize="15dp" />
+                   </TableRow>
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="1dp"
+                       android:background="#333333"/>
+
+                   <TableRow>
+                       <TextView
+                           android:text="Total Cost"
+                           android:textSize="15dp"
+                           android:padding="10dp"/>
+
+                       <TextView
+                           android:layout_marginLeft="30dp"
+                           android:padding="10dp"
+                           android:text="51*165 ft"
+                           android:textSize="15dp" />
+                   </TableRow>
+
+
+
+
+               </TableLayout>
+
+
+           </LinearLayout>
+       </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="5dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Product Details"/>
+
+            <TableLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+                    <TextView
+                        android:text="Media ID"
+                        android:textSize="15dp"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_marginLeft="30dp"
+                        android:padding="10dp"
+                        android:text="32"
+                        android:textSize="15dp" />
+                </TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"/>
+
+                <TableRow>
+                    <TextView
+                        android:text="Type"
+                        android:textSize="15dp"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_marginLeft="30dp"
+                        android:padding="10dp"
+                        android:text="BillBoard"
+                        android:textSize="15dp" />
+                </TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"/>
+
+                <TableRow>
+                    <TextView
+                        android:text="Street"
+                        android:textSize="15dp"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:padding="10dp"
+                        android:text="Kalyan Nagar"
+                        android:textSize="15dp" />
+                </TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"/>
+
+                <TableRow>
+                    <TextView
+                        android:text="City"
+                        android:textSize="15dp"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_marginLeft="30dp"
+                        android:padding="10dp"
+                        android:text="Bengaluru"
+                        android:textSize="15dp" />
+                </TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"/>
+
+                <TableRow>
+                    <TextView
+                        android:text="State"
+                        android:textSize="15dp"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_marginLeft="30dp"
+                        android:padding="10dp"
+                        android:text="karnataka"
+                        android:textSize="15dp" />
+                </TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"/>
+
+                <TableRow>
+                    <TextView
+                        android:text="Size"
+                        android:textSize="15dp"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_marginLeft="30dp"
+                        android:padding="10dp"
+                        android:text="15*165ft"
+                        android:textSize="15dp" />
+                </TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"/>
+
+                <TableRow>
+                    <TextView
+                        android:text="Total Sq.ft"
+                        android:textSize="15dp"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_marginLeft="30dp"
+                        android:padding="10dp"
+                        android:text="8415"
+                        android:textSize="15dp" />
+                </TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#333333"/>
+
+                <TableRow>
+                    <TextView
+                        android:text="Cost per Sq.ft (3 Months)"
+                        android:textSize="15dp"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_marginLeft="30dp"
+                        android:padding="10dp"
+                        android:text="500Rs"
+                        android:textSize="15dp" />
+                </TableRow>
+
+
+
+
+
+            </TableLayout>
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

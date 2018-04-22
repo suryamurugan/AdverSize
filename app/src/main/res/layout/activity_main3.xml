@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+
+    android:background="#121212"
+    tools:context="ads.in.adversize.adversize.Main3Activity">
+
+
+    <ImageView
+        android:id="@+id/img"
+
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/fin"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <EditText
+            android:drawableLeft="@drawable/ic_profile"
+            android:drawablePadding="5dp"
+            android:paddingLeft="10dp"
+            android:hint="First Name"
+            android:background="@drawable/fields"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_profile"
+            android:drawablePadding="5dp"
+            android:paddingLeft="10dp"
+            android:hint="Last Name"
+            android:background="@drawable/fields"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_profile"
+            android:drawablePadding="5dp"
+            android:paddingLeft="10dp"
+            android:hint="City"
+            android:background="@drawable/fields"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            />
+
+        <EditText  android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_profile"
+            android:drawablePadding="5dp"
+            android:paddingLeft="10dp"
+            android:hint="State"
+            android:background="@drawable/fields"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="textPersonName"/>
+
+        <EditText  android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_profile"
+            android:drawablePadding="5dp"
+            android:paddingLeft="10dp"
+            android:hint="Pin Code"
+            android:background="@drawable/fields"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="number" />
+
+        <EditText  android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_profile"
+            android:drawablePadding="5dp"
+            android:paddingLeft="10dp"
+            android:hint="Phone Number"
+            android:background="@drawable/fields"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="number" />
+        <EditText
+            android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/ic_profile"
+        android:drawablePadding="5dp"
+        android:paddingLeft="10dp"
+        android:hint="Company"
+        android:background="@drawable/fields"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="textPersonName"/>
+        <EditText
+
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_profile"
+            android:drawablePadding="5dp"
+            android:paddingLeft="10dp"
+            android:hint="Email"
+            android:background="@drawable/fields"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
+        <EditText
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_profile"
+            android:drawablePadding="5dp"
+            android:paddingLeft="10dp"
+            android:hint="Website"
+            android:background="@drawable/fields"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="textPersonName"/>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_profile"
+            android:drawablePadding="5dp"
+            android:paddingLeft="10dp"
+            android:hint="Password"
+            android:background="@drawable/fields"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_profile"
+            android:drawablePadding="5dp"
+            android:paddingLeft="10dp"
+            android:hint="Confirm Password"
+            android:background="@drawable/fields"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="textPassword" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="264dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button"
+            android:text="Register"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>
+
+
+
+
+</LinearLayout>
+
+
+
+
+
+

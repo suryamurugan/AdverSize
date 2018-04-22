@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#cecece"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+    <android.support.v7.widget.CardView
+
+
+
+        card_view:cardCornerRadius="@dimen/card_album_radius"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Basic Details"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:padding="3dp"/>
+<LinearLayout
+
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <Spinner
+
+        android:layout_weight="1"
+        android:textAlignment="viewStart"
+        android:id="@+id/planets_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start" />
+
+
+    <Button
+        android:id="@+id/avaibaleFrom"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:elevation="5dp"
+        android:text="Available" />
+
+
+</LinearLayout>
+
+
+
+            <EditText
+                android:id="@+id/media_landmark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Media Landmark" />
+
+            <EditText
+                android:id="@+id/media_facing_towards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Media Facing towards" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+
+
+        card_view:cardCornerRadius="@dimen/card_album_radius"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Media Dimensions and Location"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:padding="3dp"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/media_width"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Media Width" />
+
+                <EditText
+                    android:id="@+id/media_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Media Height" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/media_locality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Media Locality" />
+
+            <EditText
+                android:id="@+id/media_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City" />
+
+            <EditText
+                android:id="@+id/media_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="State" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/locationImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_map"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="231"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="1231"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+
+
+        card_view:cardCornerRadius="@dimen/card_album_radius"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Media Price/Sq.ft. (In Rupees)"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:padding="3dp"/>
+
+            <EditText
+                android:id="@+id/pirce3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="For 0-3 Months" />
+
+            <EditText
+                android:id="@+id/price6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="For 0-6 Months" />
+
+            <EditText
+                android:id="@+id/price1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="For 1 Year" />
+
+
+
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/SelectButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Button" />
+
+            <Button
+                android:id="@+id/UploadButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Upload Button" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
+
+
+
+</ScrollView>

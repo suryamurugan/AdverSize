@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+
+            android:id="@+id/home_fragment"
+            android:icon="@drawable/ic_home_white_24px"
+            android:title="Home"
+            />
+        <item
+            android:id="@+id/add_media_fragment"
+            android:icon="@drawable/ic_playlist_add_black_24dp"
+            android:title="Add Media" />
+        <item
+            android:id="@+id/live_camp_fragment"
+            android:icon="@drawable/ic_poll_black_24dp"
+            android:title="Live Campaign" />
+        <item
+            android:id="@+id/map_search_fragment"
+            android:icon="@drawable/ic_map_white_24px"
+            android:title="Map Search" />
+        <!--
+        <item android:title="Location">
+            <menu>
+                <item
+                    android:id="@+id/nav_slideshow"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="Mysore" />
+                <item
+                    android:id="@+id/nav_manage"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Mandya" />
+                <item
+                    android:id="@+id/nav_maage"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Blore" />
+
+                <item
+                    android:id="@+id/nav_nage"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Hassan" />
+
+            </menu>
+
+        </item>
+-->
+
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/profile_account"
+                android:icon="@drawable/ic_settings_black_24dp"
+                android:title="Account Settings" />
+            <item
+                android:id="@+id/contact_us"
+                android:icon="@drawable/ic_contact_mail_black_24dp"
+                android:title="Contact Us" />
+        </menu>
+    </item>
+
+</menu>
