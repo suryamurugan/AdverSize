@@ -84,7 +84,7 @@ public class LiveCOneAdaptorMedia extends RecyclerView.Adapter<RecyclerView.View
         /////////////////////////////
         MediaObject current=data.get(position);
         myHolder.mediaName.setText(current.getMediaName());
-
+        myHolder.size.setText(current.getMediaWidth()+" * "+current.getMediaHeight());
         //myHolder.mediaPrice.setText(current.mediaTotalPrice);
 
         //myHolder.mediaRating.setRating(Float.parseFloat(current.mediaRating));
@@ -114,7 +114,7 @@ public class LiveCOneAdaptorMedia extends RecyclerView.Adapter<RecyclerView.View
 
     class MyHolder extends RecyclerView.ViewHolder{
 
-        TextView mediaName;
+        TextView mediaName,size;
         ImageView img;
         ProgressBar progressBar;
         TextView mediaPrice;
@@ -131,6 +131,8 @@ public class LiveCOneAdaptorMedia extends RecyclerView.Adapter<RecyclerView.View
             context= itemView.getContext();
             mediaName= itemView.findViewById(R.id.landmark);
             img= itemView.findViewById(R.id.thumbnail);
+            size = itemView.findViewById(R.id.size);
+
          //   mediaPrice = (TextView) itemView.findViewById(R.id.count);
            // mediaRating = itemView.findViewById(R.id.ratingBar);
 

@@ -80,16 +80,22 @@
                 android:text="Media Name"
                 android:textStyle="bold"
                 android:textAppearance="@style/TextAppearance.AppCompat" />
-            <TextView android:text=" : "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/landmark"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:padding="5dp"
-                android:text="Media Name" android:textAppearance="@style/TextAppearance.AppCompat" />
+
+            <LinearLayout
+                android:orientation="horizontal">
+                <TextView android:text=" :  "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/landmark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:padding="5dp"
+                    android:text="Media Name" android:textAppearance="@style/TextAppearance.AppCompat" />
+
+
+            </LinearLayout>
 
 
         </TableRow>
@@ -103,16 +109,24 @@
                 android:text="Size"
                 android:textStyle="bold"
                 android:textAppearance="@style/TextAppearance.AppCompat" />
-            <TextView android:text=" : "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/size"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:padding="5dp"
-                android:text="size" android:textAppearance="@style/TextAppearance.AppCompat" />
+
+            <LinearLayout
+                android:orientation="horizontal">
+                <TextView android:text=" :  "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:padding="5dp"
+                    android:text="size" android:textAppearance="@style/TextAppearance.AppCompat" />
+
+
+
+            </LinearLayout>
+
 
 
         </TableRow>
@@ -126,16 +140,18 @@
                 android:text="Availability"
                 android:textStyle="bold"
                 android:textAppearance="@style/TextAppearance.AppCompat" />
-            <TextView android:text=" : "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <Switch
+           <LinearLayout
+               android:orientation="horizontal">
+               <TextView android:text=" :   "
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+               <Switch
+                   android:theme="@style/Switch"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
 
-                android:theme="@style/Switch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="110dp"/>
+           </LinearLayout>
+
         </TableRow>
 
     </TableLayout>

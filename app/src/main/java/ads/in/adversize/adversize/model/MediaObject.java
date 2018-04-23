@@ -67,6 +67,16 @@ public class MediaObject {
     @Expose
     private String mediaTotalPrice12;
 
+    public String getMediaType() {
+        return mediaType;
+    }
+
+    public void setMediaType(String mediaType) {
+        this.mediaType = mediaType;
+    }
+
+    private String mediaType;
+
     public String getMediaID() {
         return mediaID;
     }

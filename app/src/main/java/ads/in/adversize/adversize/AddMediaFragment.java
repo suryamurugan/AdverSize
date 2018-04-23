@@ -17,8 +17,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.app.Activity;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
 
@@ -32,6 +34,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import ads.in.adversize.adversize.model.MediaObject;
+import ads.in.adversize.adversize.model.MediaUploadObject;
 import ads.in.adversize.adversize.model.resp;
 import ads.in.adversize.adversize.remote.ApiUtils;
 import ads.in.adversize.adversize.remote.UserService;
@@ -45,15 +48,6 @@ import static android.app.Activity.RESULT_OK;
  * Created by suryamurugan on 4/4/18.
  */
 
-public class AddMediaFragment extends Fragment  {
-
-    MediaObject media;
-
-
-    private GoogleMap mMap;
-//OnMapReadyCallback
-
-    ///
     /* this is a autocomplete fragment working
       <fragment
     android:id="@+id/place_autocomplete_fragment"
@@ -63,22 +57,34 @@ public class AddMediaFragment extends Fragment  {
             />
     */
 
-    ImageView imageView;
+public class AddMediaFragment extends Fragment  {
 
+    MediaUploadObject mediaObject;
+    ImageView imageView;
     private static final int IMG_REQUEST = 777;
+    int PLACE_PICKER_REQUEST = 1;
+
     Bitmap bitmap;
     UserLocalStore userLocalStore;
     UserService userService1;
     // 10 fields
     EditText media_landmark, media_facing, media_Width, media_height, media_locality, media_city, media_state, price3, price6, price1;
     // 2 fields
-    Button availabeFrom;
+    Button availabeFrom,select, upload;
     ImageButton longlat; //mediaType;
 
-    // 1 Image Field
-    Button select, upload;
+    TextView tvlong,tvlat;
 
-    String mediatype;
+    LinearLayout linearLayout;
+
+    View.OnClickListener onClickListener;
+
+    String vendorID;
+
+  //  String available;
+    String longlati;
+/*
+
     String medialandmark;
     String mediafacing;
     String width;
@@ -89,11 +95,9 @@ public class AddMediaFragment extends Fragment  {
     String p3;
     String p6;
     String p12;
-    String vendorID;
-    String available;
-    String longlati;
 
-    int PLACE_PICKER_REQUEST = 1;
+*/
+
 
     Spinner spinner;
     ArrayAdapter<CharSequence> adapter;
@@ -106,14 +110,6 @@ public class AddMediaFragment extends Fragment  {
         activitym = activity;
     }
 
-/*
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        mContext = context;
-
-    }
-*/
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -124,9 +120,14 @@ public class AddMediaFragment extends Fragment  {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        mediaObject = new MediaUploadObject();
+
+
 
         userLocalStore = new UserLocalStore(getContext());
         userService1 = ApiUtils.getUserService();
+
+        vendorID = String.valueOf(userLocalStore.getLoggedInUser().vedorid);
 
 
         User user = userLocalStore.getLoggedInUser();
@@ -149,7 +150,11 @@ public class AddMediaFragment extends Fragment  {
         availabeFrom = view.findViewById(R.id.avaibaleFrom);
 
         longlat = view.findViewById(R.id.locationImage);
+        tvlong = view.findViewById(R.id.tvlongitude);
+        tvlat = view.findViewById(R.id.tvlatitude);
 
+        tvlong.setText("Longitude : "+mediaObject.getMediaGoogleLongitude());
+        tvlong.setText("Latitude : "+mediaObject.getMediaGoogleLatitude());
 
 
         availabeFrom.setOnClickListener(new View.OnClickListener() {
@@ -159,9 +164,12 @@ public class AddMediaFragment extends Fragment  {
 showDatePickerDialog(view);
 
 
+
             }
         });
 
+
+      //linearLayout.setOnClickListener(onClickListener);
         longlat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -197,11 +205,13 @@ showDatePickerDialog(view);
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
+                    //Showing selected spinner item
+                if (adapterView.getSelectedItemPosition() == 0){
 
-                // Showing selected spinner item
-               // Toast.makeText(adapterView.getContext(), ": " + item, Toast.LENGTH_LONG).show();
-
-                mediatype =   item;
+                }
+                else{
+                    mediaObject.setMediaType(item);
+                }
             }
 
             @Override
@@ -210,41 +220,6 @@ showDatePickerDialog(view);
             }
         });
 
-        //////////////
-
-
-
-
-        /////////////////////////////////////////////
-
-////////////////////////////// FOR MAPS /////////////////////////////////////////
-/*
-        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-        //getSupportFragmentManager()
-*/
-        //////////////////////////////////////////////
-
-// //////////////// FOR PLACES AUTO/ /////////////////////////////////////////////
-        /*
-        SupportPlaceAutocompleteFragment autocompleteFragment = (SupportPlaceAutocompleteFragment) getChildFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
-
-        autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
-            @Override
-            public void onPlaceSelected(Place place) {
-                // TODO: Get info about the selected place.
-                //Log.i(TAG, "Place: " + place.getName());
-                Toast.makeText(getContext(), ""+place.getAddress(), Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onError(Status status) {
-                // TODO: Handle the error.
-               // Log.i(TAG, "An error occurred: " + status);
-                Toast.makeText(getContext(), "error"+status, Toast.LENGTH_SHORT).show();
-            }
-        });
-        */
-//////////////////////////////////////////////////////////////////////////////////////
 
         select = view.findViewById(R.id.SelectButton);
         upload = view.findViewById(R.id.UploadButton
@@ -253,8 +228,6 @@ showDatePickerDialog(view);
         select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 selectImage();
 
             }
@@ -263,8 +236,10 @@ showDatePickerDialog(view);
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                uploadImage();
-                Toast.makeText(getContext(), ""+media_landmark.getText(), Toast.LENGTH_SHORT).show();
+               uploadImage();
+              //  Toast.makeText(getContext(), ""+media_landmark.getText(), Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(activitym, ""+mediaObject.getMediaCity(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -320,6 +295,27 @@ showDatePickerDialog(view);
         // TODO Auto-generated method stub
     }*/
     public void selectImage() {
+        ///////////////////////////
+
+       // mediaObject.setMediaType(); //alreadyset
+        //av
+        mediaObject.setMediaLandmark(media_landmark.getText().toString());
+        //facinhg
+        mediaObject.setMediaWidth(media_Width.getText().toString());
+        mediaObject.setMediaHeight(media_height.getText().toString());
+        mediaObject.setMediaLocality(media_locality.getText().toString());
+        mediaObject.setMediaCity(media_city.getText().toString());
+        mediaObject.setMediaState(media_state.getText().toString());
+        /*mediaObject.setMediaGoogleLatitude(); /// added in picker
+        mediaObject.setMediaGoogleLongitude();*/
+        mediaObject.setMediaPrice3(price3.getText().toString());
+        mediaObject.setMediaPrice6(price6.getText().toString());
+        mediaObject.setMediaPrice12(price1.getText().toString());
+
+
+        ///////////
+
+
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
@@ -369,8 +365,12 @@ showDatePickerDialog(view);
                         // String toastMsg = String.format("Place: %s", place.getName());
                         //Place place1 =place;
 
-                        longlati= String.valueOf(place.getLatLng().longitude);
-                        Toast.makeText(activitym, "\n"+longlati, Toast.LENGTH_LONG).show();
+                        //longlati= String.valueOf(place.getLatLng().longitude);
+                        //Toast.makeText(activitym, "\n"+longlati, Toast.LENGTH_LONG).show();
+                        mediaObject.setMediaGoogleLatitude(String.valueOf(place.getLatLng().latitude));
+                        mediaObject.setMediaGoogleLongitude(String.valueOf(place.getLatLng().longitude));
+                        tvlong.setText("Longitude : "+mediaObject.getMediaGoogleLongitude());
+                        tvlat.setText("Latitude : "+mediaObject.getMediaGoogleLatitude());
                     }
                 }
                 break;
@@ -406,8 +406,14 @@ showDatePickerDialog(view);
     public void uploadImage(){
 
 
+        //////////////////
+
+        //////////////////////
+        Toast.makeText(activitym, ""+availabeFrom.getText(), Toast.LENGTH_SHORT).show();
+
         //mediatype = mediaType.getText().toString();
-        medialandmark = media_landmark.getText().toString();
+
+        /*medialandmark = media_landmark.getText().toString();
         mediafacing = media_facing.getText().toString();
         width = media_Width.getText().toString();
         height =  media_height.getText().toString();
@@ -418,13 +424,18 @@ showDatePickerDialog(view);
         p6 = price6.getText().toString();
         p12 = price1.getText().toString();
         available = availabeFrom.getText().toString();
-
+*/
        // text = findViewById(R.id.text);
 
         String Image = imageToString();
 
-        retrofit2.Call<resp> call = userService1.mediaUpload(vendorID,mediatype,medialandmark
-        ,mediafacing,width,height,locality,city,state,available,p3,p6,p12,Image);
+        retrofit2.Call<resp> call = userService1.mediaUpload(
+                vendorID,mediaObject.getMediaType(),mediaObject.getMediaLandmark()
+        ,mediaObject.getMediaFacing(),mediaObject.getMediaWidth(),
+                mediaObject.getMediaHeight(),mediaObject.getMediaLocality(),
+                mediaObject.getMediaCity(),mediaObject.getMediaState(),
+                mediaObject.getMediaAvailability(),mediaObject.getMediaPrice3(),
+                mediaObject.getMediaPrice6(),mediaObject.getMediaPrice12(),Image);
 
         call.enqueue(new Callback<resp>() {
             @Override
@@ -432,6 +443,8 @@ showDatePickerDialog(view);
 
                 resp resp = response.body();
                 Toast.makeText(getContext(), ""+resp.getResponse(), Toast.LENGTH_SHORT).show();
+                Intent intent= new Intent(getActivity(),HomeFragment.class);
+                startActivity(intent);
             }
 
             @Override
@@ -443,29 +456,10 @@ showDatePickerDialog(view);
         });
 
 
-//text.setText(Image);
-      //  Toast.makeText(getContext(), ""+Image.charAt(0), Toast.LENGTH_SHORT).show();
-
 
     }
 
 
 
-    /////////////// FOR MAP FRAGMENT ?//////////////////////////
-  /*
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
-        mMap.getUiSettings().setScrollGesturesEnabled(true);
-       // mMap.getUiSettings().setTiltGesturesEnabled(true);
-     //   mMap.getUiSettings().setMyLocationButtonEnabled(true);
-        //mMap.getUiSettings().setZoomGesturesEnabled(true);
-        // Add a marker in Sydney, Australia, and move the camera.
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-    }
-*/
-    //////////////////////////////////////////////////////////////////////
 }

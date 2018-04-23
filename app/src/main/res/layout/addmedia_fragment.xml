@@ -91,6 +91,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
+            android:id="@+id/dimandloc"
             android:padding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -130,38 +131,59 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Media Locality" />
-
-            <EditText
-                android:id="@+id/media_city"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="City" />
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_weight="1"
+                    android:id="@+id/media_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="City" />
 
-            <EditText
-                android:id="@+id/media_state"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="State" />
+                <EditText
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:id="@+id/media_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="State" />
+
+            </LinearLayout>
+
+
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageButton
+                    android:layout_marginLeft="20dp"
+                    android:background="#ffffff"
                     android:id="@+id/locationImage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_map"/>
+                    style="@android:style/Widget.DeviceDefault.Light.ImageButton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:elevation="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_004_map" />
                 <LinearLayout
+                    android:layout_marginLeft="10dp"
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:text="231"
+                        android:padding="5dp"
+                        android:id="@+id/tvlongitude"
+                        android:text="Longitude : "
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <TextView
-                        android:text="1231"
+                        android:padding="5dp"
+                        android:id="@+id/tvlatitude"
+                        android:text="Latitude :"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -182,6 +204,7 @@
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:padding="8dp"
             android:layout_width="match_parent"
@@ -227,13 +250,13 @@
                 android:id="@+id/SelectButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Select Button" />
+                android:text="Select Media Image" />
 
             <Button
                 android:id="@+id/UploadButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Upload Button" />
+                android:text="Submit" />
 
         </LinearLayout>
 

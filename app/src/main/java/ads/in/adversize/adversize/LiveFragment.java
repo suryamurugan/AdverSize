@@ -31,6 +31,8 @@ public class LiveFragment extends Fragment {
     //   TextView idk,fullname,Company,city,Email,website,navname,mailtx;
     UserService userService;
 
+    UserLocalStore userLocalStore;
+
 
     @Nullable
     @Override
@@ -50,8 +52,9 @@ public class LiveFragment extends Fragment {
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),1));
         //  recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
         userService = ApiUtils.getUserService();
+        userLocalStore = new UserLocalStore(getContext());
 
-        retrofit2.Call<List<MediaObject>> call = userService.vendorm("44");
+        retrofit2.Call<List<MediaObject>> call = userService.vendorm(String.valueOf(userLocalStore.getLoggedInUser().vedorid));
         call.enqueue(new Callback<List<MediaObject>>() {
             @Override
             public void onResponse(Call<List<MediaObject>> call, Response<List<MediaObject>> response) {
@@ -90,6 +93,8 @@ public class LiveFragment extends Fragment {
                     fishData.setMediaName(response.body().get(i).getMediaName());
                     fishData.setMediaImgLocation(response.body().get(i).getMediaImgLocation());
                     fishData.setMediaID(response.body().get(i).getMediaID());
+                    fishData.setMediaHeight(response.body().get(i).getMediaHeight());
+                    fishData.setMediaWidth(response.body().get(i).getMediaWidth());
                     data.add(fishData);
                     adaptorMedia.notifyDataSetChanged();
 
