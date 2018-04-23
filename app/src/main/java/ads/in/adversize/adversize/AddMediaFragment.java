@@ -75,6 +75,9 @@ public class AddMediaFragment extends Fragment  {
 
     TextView tvlong,tvlat;
 
+    String useremail;
+    String passwd;
+
     LinearLayout linearLayout;
 
     View.OnClickListener onClickListener;
@@ -312,7 +315,10 @@ showDatePickerDialog(view);
         mediaObject.setMediaPrice6(price6.getText().toString());
         mediaObject.setMediaPrice12(price1.getText().toString());
 
+////////////////////////////
+        //Validation
 
+        ///////////////////////
         ///////////
 
 
@@ -409,7 +415,7 @@ showDatePickerDialog(view);
         //////////////////
 
         //////////////////////
-        Toast.makeText(activitym, ""+availabeFrom.getText(), Toast.LENGTH_SHORT).show();
+       // Toast.makeText(activitym, ""+availabeFrom.getText(), Toast.LENGTH_SHORT).show();
 
         //mediatype = mediaType.getText().toString();
 
@@ -441,14 +447,16 @@ showDatePickerDialog(view);
             @Override
             public void onResponse(Call<resp> call, Response<resp> response) {
 
-                resp resp = response.body();
-                Toast.makeText(getContext(), ""+resp.getResponse(), Toast.LENGTH_SHORT).show();
+               // resp resp = response.body();
+               // Toast.makeText(getContext(), ""+resp.getResponse(), Toast.LENGTH_SHORT).show();
                 Intent intent= new Intent(getActivity(),HomeFragment.class);
-                startActivity(intent);
+                //startActivity(intent);
             }
 
             @Override
             public void onFailure(Call<resp> call, Throwable t) {
+
+                Toast.makeText(activitym, "Failed bro"+t.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
 

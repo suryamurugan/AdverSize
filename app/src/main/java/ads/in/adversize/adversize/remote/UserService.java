@@ -28,7 +28,7 @@ public interface UserService {
     Call<ResObj> login(@Path("username")String username, @Path("password")String password);
 */
 @FormUrlEncoded
-    @POST("finalid.php")
+    @POST("mVendorLogin.php")
     Call<ResObj> login(@Field("id") String username,
                         @Field("p") String password);
 /*

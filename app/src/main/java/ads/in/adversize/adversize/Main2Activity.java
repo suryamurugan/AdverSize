@@ -144,7 +144,7 @@ boolean STATE=false;
                         String vendorid  = resObj.getVendorID();
                         String username =resObj.getFirstName()+" "+resObj.getLastName();
                         user.username = username;
-                        user.vedorid=  Integer.parseInt(vendorid);
+                      //  user.vedorid=  Integer.parseInt(vendorid);
                         UserLocalStore userLocalStore = new UserLocalStore(getApplicationContext());
                         userLocalStore.storeUserData(user);
 
