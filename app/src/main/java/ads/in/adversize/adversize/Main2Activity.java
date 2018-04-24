@@ -1,18 +1,13 @@
 package ads.in.adversize.adversize;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import ads.in.adversize.adversize.model.ResObj;
 import ads.in.adversize.adversize.remote.ApiUtils;
 import ads.in.adversize.adversize.remote.UserService;
@@ -22,93 +17,77 @@ import retrofit2.Response;
 
 public class Main2Activity extends AppCompatActivity {
 
-
-
 boolean STATE=false;
 
-    Button login,reg;
-    EditText usernameedit,passwordedit;
-    UserService userService;
-   // ProgressBar loadProgress;
-
-
-    ///
-
-
+    private Button login;
+    private Button reg;
+    private EditText usernameedit;
+    private EditText passwordedit;
+    private UserService userService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        // Hiding ActionBar
         ActionBar actionBar =getSupportActionBar();
         actionBar.hide();
 
+        // Userservice aka API //
+        userService = ApiUtils.getUserService();
 
+        // Referencing to UI component//
         usernameedit =findViewById(R.id.username);
         passwordedit = findViewById(R.id.password);
         login = findViewById(R.id.login);
+        reg = findViewById(R.id.reg);
 
-
-
-            login.setOnClickListener(new View.OnClickListener() {
+        // Login Button Listner //
+        login.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
                     String useremail = usernameedit.getText().toString();
                     String password = passwordedit.getText().toString();
-                    ///validate form
+                    // validate form //
                     if(validateLogin(useremail,password)){
-
                         doLogin(useremail,password);
-
                     }
-
                 }
             });
 
-
-
-
-        userService = ApiUtils.getUserService();
-
-
-        reg = findViewById(R.id.reg);
+        // Register Button Listner //
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                retrofit2.Call<ResObj> call = userService.login("surya3542live@gmail.com", "openopen");
+                retrofit2.Call<ResObj> call = userService.login(
+                        "surya3542live@gmail.com", "openopen");
                 call.enqueue(new Callback<ResObj>() {
                     @Override
                     public void onResponse(Call<ResObj> call, Response<ResObj> response) {
                         if(response.isSuccessful()){
                             ResObj resObj = response.body();
                             if(resObj.getMessage().equals("true")) {
-                     Toast.makeText(Main2Activity.this, "Correct"+resObj.getVendorID()+resObj.getEmail()+resObj.getPhoneNumber(), Toast.LENGTH_SHORT).show();
-
+                     Toast.makeText(Main2Activity.this,
+                             "Correct"+resObj.getVendorID()+resObj.getEmail()+resObj.getPhoneNumber()
+                             , Toast.LENGTH_SHORT).show();
                             }
-
                             else{
-
-                                Toast.makeText(Main2Activity.this, "Wrong", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Main2Activity.this
+                                        , "Wrong", Toast.LENGTH_SHORT).show();
                             }
                         }
-
                     }
-
                     @Override
                     public void onFailure(Call<ResObj> call, Throwable t) {
-                        Toast.makeText(Main2Activity.this, t.getMessage()+"screwed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Main2Activity.this,
+                                t.getMessage()+"screwed", Toast.LENGTH_SHORT).show();
                     }
                 });
-
             }
         });
-
-
-
     }
-
+            // VALIDATION for Login //
     private  boolean validateLogin(String useremail, String password){
 
         if(useremail ==null || useremail.trim().length() ==0 ){
@@ -142,9 +121,9 @@ boolean STATE=false;
                         ///userLocalStore.storeUserData(returnedUser);
                         User user = new User(useremail, password);
                         String vendorid  = resObj.getVendorID();
-                        String username =resObj.getFirstName()+" "+resObj.getLastName();
-                        user.username = username;
-                      //  user.vedorid=  Integer.parseInt(vendorid);
+                        user.username = resObj.getFirstName()+" "+resObj.getLastName();
+                        user.vedorid=  Integer.parseInt(vendorid);
+                        Toast.makeText(Main2Activity.this, ""+vendorid, Toast.LENGTH_SHORT).show();
                         UserLocalStore userLocalStore = new UserLocalStore(getApplicationContext());
                         userLocalStore.storeUserData(user);
 
@@ -152,34 +131,7 @@ boolean STATE=false;
                         Intent i = new Intent(Main2Activity.this,AdverSizeHomeNavDrawActivity.class);
                         startActivity(i);
                         finish();
-
-                        //
-/*
-                        Ed.putString("username", username);
-                        Ed.putString("password", password);
-                        Ed.putString("firstName",resObj.getFirstName());
-                        Ed.putString("lastName",resObj.getLastName());
-                        Ed.putString("Company",resObj.getCompany());
-                        Ed.putString("city",resObj.getCity());
-                        Ed.putString("Email",resObj.getEmail());
-                        Ed.putString("website",resObj.getWebsite());
-
-
-
-                        Ed.commit();
-
-                        STATE=true;
-
-                        Intent i = new Intent(Main2Activity.this,AdverSizeHomeNavDrawActivity.class);
-                        startActivity(i);
-                        finish();
-
-*/
-
-
-
-
-                    }
+                  }
 
                else{
 

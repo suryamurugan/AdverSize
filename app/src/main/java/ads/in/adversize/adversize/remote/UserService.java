@@ -61,7 +61,7 @@ public interface UserService {
 
     @FormUrlEncoded
     @POST("mediaupload.php")
-    Call<resp> mediaUpload(@Field("vendorID")String vendorID,
+    Call<Void> mediaUpload(@Field("vendorID")String vendorID,
                            @Field("mediaType")String mediaType,
                            @Field("landmark")String landmark,
                            @Field("facing")String facing,
@@ -74,7 +74,9 @@ public interface UserService {
                            @Field("price")String price,
                            @Field("price6")String price6,
                            @Field("price12")String price12,
-                           @Field("imagedata")String imagedata);
+                           @Field("imagedata")String imagedata,
+                           @Field("longitude")String longitude,
+                           @Field("latitude")String latitude);
 /*
     $vendorID = $_POST['vendorID'];
     // $mediaType = $_POST['mediaType'];

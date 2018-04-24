@@ -56,7 +56,7 @@ public class HomeFragment extends Fragment {
        User user = userLocalStore.getLoggedInUser();
        String vid = String.valueOf(user.vedorid);
         Toast.makeText(getContext(), ""+vid, Toast.LENGTH_SHORT).show();
-        retrofit2.Call<List<MediaObject>> call = userService.vendorm(vid);
+        retrofit2.Call<List<MediaObject>> call = userService.vendorm(String.valueOf("44"));
         call.enqueue(new Callback<List<MediaObject>>() {
             @Override
             public void onResponse(Call<List<MediaObject>> call, Response<List<MediaObject>> response) {

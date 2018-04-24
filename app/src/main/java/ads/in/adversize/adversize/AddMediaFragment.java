@@ -1,5 +1,8 @@
 package ads.in.adversize.adversize;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -8,7 +11,10 @@ import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -435,30 +441,83 @@ showDatePickerDialog(view);
 
         String Image = imageToString();
 
-        retrofit2.Call<resp> call = userService1.mediaUpload(
+        retrofit2.Call<Void> call = userService1.mediaUpload(
                 vendorID,mediaObject.getMediaType(),mediaObject.getMediaLandmark()
         ,mediaObject.getMediaFacing(),mediaObject.getMediaWidth(),
                 mediaObject.getMediaHeight(),mediaObject.getMediaLocality(),
                 mediaObject.getMediaCity(),mediaObject.getMediaState(),
                 mediaObject.getMediaAvailability(),mediaObject.getMediaPrice3(),
-                mediaObject.getMediaPrice6(),mediaObject.getMediaPrice12(),Image);
+                mediaObject.getMediaPrice6(),mediaObject.getMediaPrice12(),Image,mediaObject.getMediaGoogleLongitude(),
+                mediaObject.getMediaGoogleLatitude());
 
-        call.enqueue(new Callback<resp>() {
+        call.enqueue(new Callback<Void>() {
             @Override
-            public void onResponse(Call<resp> call, Response<resp> response) {
+            public void onResponse(Call<Void> call, Response<Void> response) {
 
                // resp resp = response.body();
                // Toast.makeText(getContext(), ""+resp.getResponse(), Toast.LENGTH_SHORT).show();
-                Intent intent= new Intent(getActivity(),HomeFragment.class);
                 //startActivity(intent);
+/*
+                Dialog dialog = new Dialog(getActivity());
+                dialog.setContentView(R.layout.dialog_trans);
+                dialog.setTitle("Add an Expense");
+                dialog.setCancelable(true);
+
+                dialog.show();
+                */
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setMessage("YOLO")
+                        .setTitle("DONE")
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Toast.makeText(getContext(), "done klsfdnvdnopudbspugipdtrdb", Toast.LENGTH_SHORT).show();
+
+
+                               FragmentTransaction ft;
+                                ft=getFragmentManager().beginTransaction();
+                                ft.replace(R.id.screen_area, new AddMediaFragment());
+                                ft.commit();
+
+                            }
+                        });
+                AlertDialog dialog = builder.create();
+                dialog.setCancelable(false);
+                dialog.setCanceledOnTouchOutside(false);
+
+                dialog.show();
+
+
             }
 
             @Override
-            public void onFailure(Call<resp> call, Throwable t) {
-
+            public void onFailure(Call<Void> call, Throwable t) {
                 Toast.makeText(activitym, "Failed bro"+t.getMessage(), Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setMessage("Failed")
+                        .setTitle("DONE")
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Toast.makeText(getContext(), "don", Toast.LENGTH_SHORT).show();
+
+
+                                FragmentTransaction ft;
+                                ft=getFragmentManager().beginTransaction();
+                                ft.replace(R.id.screen_area, new AddMediaFragment());
+                                ft.commit();
+
+                            }
+                        });
+                AlertDialog dialog = builder.create();
+                dialog.setCancelable(false);
+                dialog.setCanceledOnTouchOutside(false);
+
+                dialog.show();
 
             }
+
 
 
         });
