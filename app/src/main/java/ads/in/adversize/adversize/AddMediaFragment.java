@@ -472,16 +472,10 @@ showDatePickerDialog(view);
                         .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Toast.makeText(getContext(), "done klsfdnvdnopudbspugipdtrdb", Toast.LENGTH_SHORT).show();
-
-
-                               FragmentTransaction ft;
-                                ft=getFragmentManager().beginTransaction();
-                                ft.replace(R.id.screen_area, new AddMediaFragment());
-                                ft.commit();
 
                             }
                         });
+
                 AlertDialog dialog = builder.create();
                 dialog.setCancelable(false);
                 dialog.setCanceledOnTouchOutside(false);

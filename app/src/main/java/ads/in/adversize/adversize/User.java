@@ -5,6 +5,11 @@ package ads.in.adversize.adversize;
  */
 
 public class User {
+
+
+
+
+
     String username, useremail, password;
 
     int vedorid;
@@ -21,5 +26,7 @@ public class User {
     public User(String useremail, String password) {
         this("", -1, useremail, password);
     }
+
+
 
 }

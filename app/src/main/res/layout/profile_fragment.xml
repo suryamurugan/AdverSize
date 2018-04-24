@@ -192,7 +192,7 @@
                         android:layout_height="60dp"
                         />
                     <Button
-
+                        android:id="@+id/changePassword"
                         android:layout_marginLeft="115dp"
                         android:layout_marginRight="115dp"
                         android:layout_marginBottom="20dp"
