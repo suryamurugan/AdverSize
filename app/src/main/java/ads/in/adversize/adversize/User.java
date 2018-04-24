@@ -6,7 +6,7 @@ package ads.in.adversize.adversize;
 
 public class User {
     String username, useremail, password;
-  
+
     int vedorid;
 
     public User(String username, int vedorid, String useremail, String password) {
