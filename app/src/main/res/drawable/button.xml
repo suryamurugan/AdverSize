@@ -2,13 +2,16 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
     <solid
-        android:color="#ffffff"/>
+        android:color="#000000"/>
     <corners
         android:radius="50dp"
         />
     <!-- Gradient Bg for listrow -->
+    <!--
     <gradient android:startColor="#49BE73"
         android:endColor="#8CCF42"
         android:angle="180" />
+-->
+
 
 </shape>

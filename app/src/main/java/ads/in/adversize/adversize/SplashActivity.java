@@ -48,7 +48,8 @@ UserLocalStore userLocalStore = new UserLocalStore(getApplicationContext());
         else if (!(userLocalStore.getLoggedInUser() ==null)) {
 
             Toast.makeText(this, ""+userLocalStore.getLoggedInUser().username, Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(SplashActivity.this, AdverSizeHomeNavDrawActivity.class);
+            //Intent intent = new Intent(SplashActivity.this, AdverSizeHomeNavDrawActivity.class);
+            Intent intent = new Intent(SplashActivity.this, BottomNavActivity.class);
             SplashActivity.this.startActivity(intent);
             finish();
         }

@@ -15,8 +15,24 @@
 
         android:padding="2dp"
         android:orientation="vertical">
--->
 
+-->
+    <EditText
+        android:id="@+id/search_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:paddingLeft="8dp"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        android:textSize="14sp"
+        android:hint="Search Media"
+        android:background="@drawable/bottom_border"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
         <android.support.v7.widget.RecyclerView
 

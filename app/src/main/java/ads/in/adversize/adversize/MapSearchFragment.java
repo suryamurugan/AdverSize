@@ -279,7 +279,7 @@ public class MapSearchFragment extends Fragment implements OnMapReadyCallback{
 
 
                 }
-                Toast.makeText(getActivity(), ""+response.body(), Toast.LENGTH_SHORT).show();
+              /*  Toast.makeText(getActivity(), ""+response.body(), Toast.LENGTH_SHORT).show();*/
               //  mapFragment.getMapAsync(MapSearchFragment.this);
             }
 

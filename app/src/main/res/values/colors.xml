@@ -19,4 +19,8 @@
     <color name="selected_item_color">#30d1d5</color>
 
     <color name="d">#1e1e1e</color>
+    <color name="colorBlack">#000000</color>
+    <color name="divider">#727272</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorPink">#D2B6FF</color>
 </resources>

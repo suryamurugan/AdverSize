@@ -327,11 +327,14 @@ showDatePickerDialog(view);
         ///////////////////////
         ///////////
 
-
+        /* WORKING PIKCER
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, IMG_REQUEST);
+        startActivityForResult(intent, IMG_REQUEST); */
+
+      /*  CropImage.activity()
+                .start(getContext(), this);*/
     }
 
 
@@ -387,6 +390,19 @@ showDatePickerDialog(view);
                 }
                 break;
 
+         /*   case CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE:
+                if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+                    CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                    if (resultCode == RESULT_OK) {
+                        Uri resultUri = result.getUri();
+                    } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                        Exception error = result.getError();
+                    }
+
+                   // cropImageView.setImageUriAsync(uri);
+                }
+                break;
+*/
             default:
                 Toast.makeText(activitym, "no idea", Toast.LENGTH_SHORT).show();
 

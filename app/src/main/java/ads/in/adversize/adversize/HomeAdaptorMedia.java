@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -26,7 +27,10 @@ public class HomeAdaptorMedia extends RecyclerView.Adapter<RecyclerView.ViewHold
     private Context context;
     private LayoutInflater inflater;
     List<MediaObject> data= Collections.emptyList();
+    private List<Media> filteredList;
     MediaObject current;
+
+  
     int currentPos=0;
     public static final String BASE_URL= "http://suryamurugan.co.nf/";
     // create constructor to innitilize context and data sent from MainActivity

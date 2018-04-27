@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,8 +31,10 @@ public class HomeFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private HomeAdaptorMedia adaptorMedia;
+    private
  //   TextView idk,fullname,Company,city,Email,website,navname,mailtx;
     UserService userService;
+    private EditText searchBox;
 
 
     @Nullable
@@ -55,7 +58,7 @@ public class HomeFragment extends Fragment {
         UserLocalStore userLocalStore = new UserLocalStore(getActivity());
        User user = userLocalStore.getLoggedInUser();
        String vid = String.valueOf(user.vedorid);
-        Toast.makeText(getContext(), ""+vid, Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(getContext(), ""+vid, Toast.LENGTH_SHORT).show();*/
         retrofit2.Call<List<MediaObject>> call = userService.vendorm(String.valueOf("44"));
         call.enqueue(new Callback<List<MediaObject>>() {
             @Override

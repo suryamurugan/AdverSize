@@ -128,7 +128,9 @@ boolean STATE=false;
                         userLocalStore.storeUserData(user);
 
                         userLocalStore.setUserLoggedIn(true);
-                        Intent i = new Intent(Main2Activity.this,AdverSizeHomeNavDrawActivity.class);
+                       // Intent i = new Intent(Main2Activity.this,AdverSizeHomeNavDrawActivity.class);
+
+                        Intent i = new Intent(Main2Activity.this,BottomNavActivity.class);
                         startActivity(i);
                         finish();
                   }

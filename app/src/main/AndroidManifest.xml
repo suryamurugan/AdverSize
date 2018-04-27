@@ -6,12 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <!-- EXTERNAL_STORAGE permissions are optional for Android 6.0 onwards. -->
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-         />
-    <uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE"
-       />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -28,6 +24,10 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" /> <!-- optional (needed if default theme has no action bar) -->
 
         <activity android:name=".MapsActivity" />
         <activity android:name=".MainActivity" />
@@ -73,7 +73,10 @@
             android:label="@string/title_activity_adver_size_home_nav_draw"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LiveTwoActivity" />
-        <activity android:name=".upLoad"></activity>
+        <activity android:name=".upLoad" />
+        <activity
+            android:name=".BottomNavActivity"
+            android:label="@string/title_activity_bottom_nav"></activity>
     </application>
 
 </manifest>
