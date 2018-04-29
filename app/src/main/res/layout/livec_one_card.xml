@@ -125,9 +125,9 @@
                 app:rcRadius="2dp"
                 app:rcBackgroundPadding="1dp"
                 app:rcReverse="false"
-                app:rcProgressColor="#039900"
+                app:rcProgressColor="#e2e2e2"
                 app:rcSecondaryProgressColor="#13B6FF"
-                app:rcBackgroundColor="#e2e2e2" />
+                app:rcBackgroundColor="#039900" />
 
 
         </LinearLayout>

@@ -61,7 +61,7 @@ public class Main5Activity extends AppCompatActivity {
 
         userService = ApiUtils.getUserService();
 
-        retrofit2.Call<List<MediaObject>> call = userService.vendorm("44");
+     /*   retrofit2.Call<List<MediaObject>> call = userService.vendorm("44");
 
         call.enqueue(new Callback<List<MediaObject>>() {
             @Override
@@ -99,7 +99,7 @@ public class Main5Activity extends AppCompatActivity {
 
 
 
-
+*/
 
 
 

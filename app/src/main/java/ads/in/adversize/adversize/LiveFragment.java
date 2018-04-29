@@ -54,10 +54,10 @@ public class LiveFragment extends Fragment {
         userService = ApiUtils.getUserService();
         userLocalStore = new UserLocalStore(getContext());
 
-        retrofit2.Call<List<MediaObject>> call = userService.vendorm(String.valueOf(userLocalStore.getLoggedInUser().vedorid));
-        call.enqueue(new Callback<List<MediaObject>>() {
+        retrofit2.Call<ArrayList<MediaObject>> call = userService.vendorm(String.valueOf(userLocalStore.getLoggedInUser().vedorid));
+        call.enqueue(new Callback<ArrayList<MediaObject>>() {
             @Override
-            public void onResponse(Call<List<MediaObject>> call, Response<List<MediaObject>> response) {
+            public void onResponse(Call<ArrayList<MediaObject>> call, Response<ArrayList<MediaObject>> response) {
                 //  Toast.makeText(AdverSize.this, ""+response.body().size(), Toast.LENGTH_SHORT).show();
 
                 //    prepareMovieData();
@@ -108,7 +108,7 @@ public class LiveFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<List<MediaObject>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<MediaObject>> call, Throwable t) {
 
                 //Toast.makeText(getContext(), "Failed"+t.getMessage(), Toast.LENGTH_SHORT).show();
 

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Basic Details"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:padding="3dp"/>
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Spinner
+
+                android:layout_weight="1"
+                android:textAlignment="viewStart"
+                android:id="@+id/planets_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start" />
+
+
+            <Button
+                android:id="@+id/avaibaleFrom"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:elevation="5dp"
+                android:text="Available" />
+
+
+        </LinearLayout>
+
+
+
+        <EditText
+            android:id="@+id/media_landmark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Media Landmark" />
+
+        <EditText
+            android:id="@+id/media_facing_towards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Media Facing towards" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/dimandloc"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Media Dimensions and Location"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:padding="3dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/media_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Media Width"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/media_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Media Height"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/media_locality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Media Locality" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/media_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City" />
+
+            <EditText
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:id="@+id/media_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="State" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_marginLeft="20dp"
+                android:background="#ffffff"
+                android:id="@+id/locationImage"
+                style="@android:style/Widget.DeviceDefault.Light.ImageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:elevation="7dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_004_map" android:layout_marginStart="20dp"/>
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_marginStart="10dp">
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/tvlongitude"
+                    android:text="Longitude : "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/tvlatitude"
+                    android:text="Latitude :"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

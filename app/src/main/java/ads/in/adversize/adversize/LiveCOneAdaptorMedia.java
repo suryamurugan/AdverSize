@@ -15,8 +15,11 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import ads.in.adversize.adversize.model.MediaObject;
 
@@ -65,29 +68,38 @@ public class LiveCOneAdaptorMedia extends RecyclerView.Adapter<RecyclerView.View
                 // Toast.makeText(context, ""+media.getMediaID()
                   //       , Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(context,LiveTwoActivity.class);
+//#                Intent intent = new Intent(context,LiveTwoActivity.class);
                /* intent.putExtra("class", (Serializable) data);
                 //context.startActivity(intent);
 */
-                Gson gson = new Gson();
-                String myJson = gson.toJson(data.get(position
-                ));
+//#                Gson gson = new Gson();
+//#                String myJson = gson.toJson(data.get(position
+//#                ));
                //Toast.makeText(context, ""+media.getMediaID(), Toast.LENGTH_SHORT).show();
-               intent.putExtra("myjson", myJson);
-                context.startActivity(intent);
+//#               intent.putExtra("myjson", myJson);
+//#                context.startActivity(intent);
 
 
 
 
             }
         });
-        /////////////////////////////
+        /*##################       /////////////////////////////
         MediaObject current=data.get(position);
         myHolder.mediaName.setText(current.getMediaName());
-        myHolder.size.setText(current.getMediaWidth()+" * "+current.getMediaHeight());
-        //myHolder.mediaPrice.setText(current.mediaTotalPrice);
+ #       myHolder.size.setText(current.getMediaWidth()+" * "+current.getMediaHeight());
+  */      //myHolder.mediaPrice.setText(current.mediaTotalPrice);
 
         //myHolder.mediaRating.setRating(Float.parseFloat(current.mediaRating));
+        MediaObject current=data.get(position);
+        myHolder.mediaName.setText(current.getMediaName());
+
+        String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+
+
+
+        myHolder.size.setText(""+current.getMediaWidth()+" * "+current.getMediaHeight()+" FT");
+     //   myHolder.avSwitch.setChecked(true);
 
 
 
@@ -98,7 +110,7 @@ public class LiveCOneAdaptorMedia extends RecyclerView.Adapter<RecyclerView.View
         // load image into imageview using glide
         //Toast.makeText(context, ""+media.getMediaImgLocation(), Toast.LENGTH_SHORT).show();
        // Glide.with(context).load("https://adversize.in/" +current.getMediaImgLocation()).into(myHolder.img);
-        Glide.with(context).load("http://suryamurugan.co.nf/" +current.getMediaImgLocation()).into(myHolder.img);
+ //#       Glide.with(context).load("http://suryamurugan.co.nf/" +current.getMediaImgLocation()).into(myHolder.img);
         //        .placeholder(R.drawable.ic_img_error)
           //      .error(R.drawable.ic_img_error)
             //    .into(myHolder.ivFish);

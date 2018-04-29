@@ -40,6 +40,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
 
         userService = ApiUtils.getUserService();
+/*
 
         retrofit2.Call<List<MediaObject>> call = userService.vendorm(String.valueOf("44"));
         call.enqueue(new Callback<List<MediaObject>>() {
@@ -64,6 +65,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
+*/
 
 
     }

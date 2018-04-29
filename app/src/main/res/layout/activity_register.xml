@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context="ads.in.adversize.adversize.RegisterActivity">
+
+
+    <TextView
+        android:textColor="#171717"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/cabin"
+        android:text="Welcome,"
+        android:textSize="35dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="normal"
+        android:fontFamily="@font/cabin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:text="Happy to see you! Let's get to know each other."/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="normal"
+        android:fontFamily="@font/cabin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="WHAT SHOULD WE CALL YOU?"/>
+
+    <EditText
+        android:textSize="20dp"
+        android:fontFamily="@font/cabin"
+        android:textStyle="normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First Name"/>
+    <EditText
+        android:textSize="20dp"
+        android:fontFamily="@font/cabin"
+        android:textStyle="normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Last Name"/>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:includeFontPadding="true"
+        android:layout_gravity="center"
+        android:background="@drawable/h_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="     Welcome     "
+        android:textSize="20dp"
+        android:fontFamily="@font/cabin"
+        android:textStyle="bold"
+        android:textColor="@color/md_white_1000"/>
+
+
+
+
+
+</LinearLayout>

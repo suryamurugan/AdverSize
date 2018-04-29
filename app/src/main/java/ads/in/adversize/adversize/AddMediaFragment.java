@@ -1,6 +1,8 @@
 package ads.in.adversize.adversize;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -38,6 +41,9 @@ import com.google.android.gms.maps.GoogleMap;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import ads.in.adversize.adversize.model.MediaObject;
 import ads.in.adversize.adversize.model.MediaUploadObject;
@@ -62,9 +68,10 @@ import static android.app.Activity.RESULT_OK;
     android:name="com.google.android.gms.location.places.ui.SupportPlaceAutocompleteFragment"
             />
     */
-
 public class AddMediaFragment extends Fragment  {
 
+
+   String availableFromDatePicker;
     MediaUploadObject mediaObject;
     ImageView imageView;
     private static final int IMG_REQUEST = 777;
@@ -171,6 +178,8 @@ public class AddMediaFragment extends Fragment  {
             public void onClick(View view) {
               //  Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
 showDatePickerDialog(view);
+
+
 
 
 
@@ -315,6 +324,8 @@ showDatePickerDialog(view);
         mediaObject.setMediaLocality(media_locality.getText().toString());
         mediaObject.setMediaCity(media_city.getText().toString());
         mediaObject.setMediaState(media_state.getText().toString());
+       mediaObject.setMediaAvailability(availabeFrom.getText().toString());
+        Toast.makeText(activitym, ""+availabeFrom.getText(), Toast.LENGTH_SHORT).show();
         /*mediaObject.setMediaGoogleLatitude(); /// added in picker
         mediaObject.setMediaGoogleLongitude();*/
         mediaObject.setMediaPrice3(price3.getText().toString());
@@ -327,11 +338,11 @@ showDatePickerDialog(view);
         ///////////////////////
         ///////////
 
-        /* WORKING PIKCER
+
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, IMG_REQUEST); */
+        startActivityForResult(intent, IMG_REQUEST);
 
       /*  CropImage.activity()
                 .start(getContext(), this);*/
@@ -342,6 +353,7 @@ showDatePickerDialog(view);
     public void showDatePickerDialog(View v) {
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getChildFragmentManager(), "datePicker");
+
 
     }
 
@@ -538,5 +550,5 @@ showDatePickerDialog(view);
 
 
 
-
 }
+

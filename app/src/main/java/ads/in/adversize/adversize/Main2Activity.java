@@ -60,7 +60,7 @@ boolean STATE=false;
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                retrofit2.Call<ResObj> call = userService.login(
+/*                retrofit2.Call<ResObj> call = userService.login(
                         "surya3542live@gmail.com", "openopen");
                 call.enqueue(new Callback<ResObj>() {
                     @Override
@@ -83,7 +83,10 @@ boolean STATE=false;
                         Toast.makeText(Main2Activity.this,
                                 t.getMessage()+"screwed", Toast.LENGTH_SHORT).show();
                     }
-                });
+                });*/
+
+                Intent intent= new Intent(Main2Activity.this,RegisterActivity.class);
+                startActivity(intent);
             }
         });
     }

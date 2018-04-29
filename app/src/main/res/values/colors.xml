@@ -4,10 +4,14 @@
    <!-- <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#121212</color>
    -->
+
+    <color name="cyanBlue">#00E0E9</color>
     <color name="colorPrimary">#121212</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="i">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#9c0003</color>
+
+    <color name="please">#171717</color>
 
     <color name="viewBg">#f1f5f8</color>
     <color name="album_title">#4c4c4c</color>

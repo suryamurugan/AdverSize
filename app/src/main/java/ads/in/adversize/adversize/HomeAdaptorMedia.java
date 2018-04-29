@@ -1,21 +1,25 @@
 package ads.in.adversize.adversize;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import ads.in.adversize.adversize.model.MediaObject;
 
@@ -27,10 +31,7 @@ public class HomeAdaptorMedia extends RecyclerView.Adapter<RecyclerView.ViewHold
     private Context context;
     private LayoutInflater inflater;
     List<MediaObject> data= Collections.emptyList();
-    private List<Media> filteredList;
     MediaObject current;
-
-  
     int currentPos=0;
     public static final String BASE_URL= "http://suryamurugan.co.nf/";
     // create constructor to innitilize context and data sent from MainActivity
@@ -64,28 +65,53 @@ public class HomeAdaptorMedia extends RecyclerView.Adapter<RecyclerView.ViewHold
                 //Toast.makeText(context, "Recycle Click" + position, Toast.LENGTH_SHORT).show();
 
                // Toast.makeText(context,"yo"+myHolder.getItemId(), Toast.LENGTH_SHORT).show();
-                 Toast.makeText(context, ""+media.getMediaImgLocation(), Toast.LENGTH_SHORT).show();
+                 //Toast.makeText(context, ""+media.getMediaImgLocation(), Toast.LENGTH_SHORT).show();
 
               //  Intent intent = new Intent(context,Main2Activity.class);
                /* intent.putExtra("class", (Serializable) data);
                 //context.startActivity(intent);
 */
+
+
+                String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+
+                //  if (date.compareTo("2018-04-29")==1){
+                Toast.makeText(context, "zer"+date.compareTo("2018-04-28"), Toast.LENGTH_SHORT).show();
+                //   }
+                //   else{
+
+
+
+                //       Toast.makeText(context, "else"+date.compareTo("2018-04-28"), Toast.LENGTH_SHORT).show();
+
+                //  }
                 Gson gson = new Gson();
                 String myJson = gson.toJson(data.get(position
                 ));
-          //      intent.putExtra("myjson", myJson);
-          //      context.startActivity(intent);
 
+                Intent intent= new Intent(context,LiveTwoActivity.class);
+              //  Toast.makeText(context, ""+data.get(position), Toast.LENGTH_SHORT).show();
+             intent.putExtra("myjson", myJson);
+                context.startActivity(intent);
+                    //Toast.makeText(context, ""+data, Toast.LENGTH_SHORT).show();
 
 
 
             }
         });
+
+
         /////////////////////////////
         MediaObject current=data.get(position);
         myHolder.mediaName.setText(current.getMediaName());
 
+
+
         myHolder.size.setText(""+current.getMediaWidth()+" * "+current.getMediaHeight()+" FT");
+        myHolder.avSwitch.setChecked(true);
+
+
+
 
         //myHolder.mediaPrice.setText(current.mediaTotalPrice);
 
@@ -115,6 +141,8 @@ public class HomeAdaptorMedia extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     class MyHolder extends RecyclerView.ViewHolder{
 
+        Switch avSwitch;
+
         TextView mediaName,size;
         ImageView img;
         TextView mediaPrice;
@@ -124,6 +152,8 @@ public class HomeAdaptorMedia extends RecyclerView.Adapter<RecyclerView.ViewHold
         // create constructor to get widget reference
         public MyHolder(View itemView) {
             super(itemView);
+
+            avSwitch = itemView.findViewById(R.id.avswitch);
 
             size = itemView.findViewById(R.id.size);
             context= itemView.getContext();

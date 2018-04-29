@@ -2,6 +2,7 @@ package ads.in.adversize.adversize.remote;
 
 import org.json.JSONArray;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ads.in.adversize.adversize.Media;
@@ -41,6 +42,11 @@ public interface UserService {
     Call<resp> uploadImage(@Field("image") String image, @Field("name")String name);
 
 
+
+    // To change password
+    @FormUrlEncoded
+    @POST("changep.php")
+    Call<resp>changepassword(@Field("id")String email,@Field("p")String password,@Field("new")String newpassword);
    /*
     @GET("finalid.php")
 
@@ -49,11 +55,11 @@ public interface UserService {
             @Query("p") String password);
 */
     @GET("vendorm.php")
-    Call<List<MediaObject>> vendorm(
+    Call<ArrayList<MediaObject>> vendorm(
             @Query("id") String id);
 
     @GET("final.php")
-    Call<List<Media>> singlemedia(
+    Call<List<MediaObject>> singlemedia(
       @Query("id") String id
     );
 

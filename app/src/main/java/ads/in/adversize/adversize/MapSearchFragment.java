@@ -1,6 +1,7 @@
 package ads.in.adversize.adversize;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -31,7 +32,10 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.gson.Gson;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import ads.in.adversize.adversize.model.MediaObject;
@@ -45,20 +49,20 @@ import retrofit2.Response;
  * Created by suryamurugan on 4/4/18.
  */
 
-public class MapSearchFragment extends Fragment implements OnMapReadyCallback{
+public class MapSearchFragment extends Fragment implements OnMapReadyCallback,GoogleMap.OnInfoWindowClickListener{
     private GoogleMap mMap;
 
   //  PlaceAutocompleteFragment placeAutoComplete;
    // HashMap<Marker, MediaObject> mDataMap = new HashMap<>();
 
     private UserService userService;
+    String clickedMediaID;
 
   //  final List<MediaObject> data = new ArrayList<>();
 
    // LocationRequest mLocationRequest;
     GoogleMap googleMap;
     GoogleApiClient mGoogleApiClient;
-
     PlaceSelectionListener placeSelectionListener;
     @Nullable
     @Override
@@ -232,12 +236,12 @@ public class MapSearchFragment extends Fragment implements OnMapReadyCallback{
         userService = ApiUtils.getUserService();
         // mMap= googleMap;
 
-        retrofit2.Call<List<MediaObject>> call = userService.vendorm(String.valueOf("44"));
+        retrofit2.Call<ArrayList<MediaObject>> call = userService.vendorm(String.valueOf("44"));
 
         mMap.clear();
-        call.enqueue(new Callback<List<MediaObject>>() {
+        call.enqueue(new Callback<ArrayList<MediaObject>>() {
             @Override
-            public void onResponse(Call<List<MediaObject>> call, Response<List<MediaObject>> response) {
+            public void onResponse(Call<ArrayList<MediaObject>> call, Response<ArrayList<MediaObject>> response) {
                 for (int i = 0; i < response.body().size(); i++) {
                    /* MediaObject fishData = new MediaObject();
                     fishData.setMediaWidth(response.body().get(i).getMediaWidth());
@@ -257,15 +261,18 @@ public class MapSearchFragment extends Fragment implements OnMapReadyCallback{
                     Double lng = Double.valueOf(response.body().get(i).getMediaGoogleLongitude());
                     String placeName = response.body().get(i).getMediaName();
                     String vicinity = response.body().get(i).getMediaStreet();
+                    String mediaID = response.body().get(i).getMediaID();
                     MarkerOptions markerOptions = new MarkerOptions();
                     LatLng latLng = new LatLng(lat, lng);
                     // Position of Marker on Map
                     markerOptions.position(latLng);
                     // Adding Title to the Marker
-                    markerOptions.title(placeName + " : " + vicinity);
+                    markerOptions.title(placeName + " : " + vicinity+","+mediaID);
                     // Adding Marker to the Camera.
                     Marker m = mMap.addMarker(markerOptions);
                     m.showInfoWindow();
+
+
                     // Adding colour to the marker
                     //markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
                     /*markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.marker));*/
@@ -275,6 +282,28 @@ public class MapSearchFragment extends Fragment implements OnMapReadyCallback{
 
                     mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
                     mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
+                    mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                        @Override
+                        public void onInfoWindowClick(Marker marker) {
+                            String currentString = marker.getTitle();
+                            String[] separated = currentString.split(",");
+                            clickedMediaID =separated[1];
+                           // Toast.makeText(getContext(), ""+clickedMediaID, Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getContext(),LiveTwoActivity.class);
+               /* intent.putExtra("class", (Serializable) data);
+                //context.startActivity(intent);
+*/
+
+                            //Toast.makeText(context, ""+media.getMediaID(), Toast.LENGTH_SHORT).show();
+
+                            intent.putExtra("frommap", ""+clickedMediaID);
+                            startActivity(intent);
+
+
+
+
+                        }
+                    });
 
 
 
@@ -284,9 +313,11 @@ public class MapSearchFragment extends Fragment implements OnMapReadyCallback{
             }
 
             @Override
-            public void onFailure(Call<List<MediaObject>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<MediaObject>> call, Throwable t) {
 
                 Toast.makeText(getContext(), "Failed"+t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Info window clicked",
+                        Toast.LENGTH_SHORT).show();
 
 
             }
@@ -338,4 +369,9 @@ public class MapSearchFragment extends Fragment implements OnMapReadyCallback{
       //  mMap.setMapType( GoogleMap.MAP_TYPE_HYBRID );
     }
 
+    @Override
+    public void onInfoWindowClick(Marker marker) {
+        Toast.makeText(getContext(), "Info window clicked",
+                Toast.LENGTH_SHORT).show();
+    }
 }

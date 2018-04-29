@@ -93,8 +93,8 @@ public class AdverSize extends AppCompatActivity
 
 
                 userService = ApiUtils.getUserService();
-
-                retrofit2.Call<List<MediaObject>> call = userService.vendorm("17");
+// working
+               /* retrofit2.Call<List<MediaObject>> call = userService.vendorm("17");
 
 
                 call.enqueue(new Callback<List<MediaObject>>() {
@@ -153,7 +153,7 @@ public class AdverSize extends AppCompatActivity
 
 
                     }
-                });
+                });*/
 /*
                 call.enqueue(new Callback<JSONArray>() {
                     @Override
