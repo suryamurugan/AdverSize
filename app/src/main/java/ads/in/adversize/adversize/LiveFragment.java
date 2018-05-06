@@ -26,11 +26,11 @@ import retrofit2.Response;
  */
 
 public class LiveFragment extends Fragment {
+
     private RecyclerView recyclerView;
     private LiveCOneAdaptorMedia adaptorMedia;
-    //   TextView idk,fullname,Company,city,Email,website,navname,mailtx;
-    UserService userService;
 
+    UserService userService;
     UserLocalStore userLocalStore;
 
 
@@ -43,14 +43,13 @@ public class LiveFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         final List<MediaObject> data=new ArrayList<>();
         recyclerView = view.findViewById(R.id.recycler_view_live);
         adaptorMedia = new LiveCOneAdaptorMedia(getContext(), data);
         recyclerView.setAdapter(adaptorMedia);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),1));
-        //  recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
         userService = ApiUtils.getUserService();
         userLocalStore = new UserLocalStore(getContext());
 
@@ -58,36 +57,6 @@ public class LiveFragment extends Fragment {
         call.enqueue(new Callback<ArrayList<MediaObject>>() {
             @Override
             public void onResponse(Call<ArrayList<MediaObject>> call, Response<ArrayList<MediaObject>> response) {
-                //  Toast.makeText(AdverSize.this, ""+response.body().size(), Toast.LENGTH_SHORT).show();
-
-                //    prepareMovieData();
-
-                //for(int i=0 ; i< response.body().size();i++){
-                //MediaObject movie = new MediaObject();
-                //List<MediaObject> mediaObjects = response.body();
-                //String firstName=sp1.getString("firstName", null);
-                //String lastName=sp1.getString("lastName", null);
-                //String Full = ""+firstName+" "+lastName;
-                //fullname.setText(Full);
-
-                //  navname.setText(Full);
-
-               /* String company = sp1.getString("Company",null);
-                Company.setText(company);
-                String ciity = sp1.getString("city",null);
-                city.setText(ciity);
-                String Eemail = sp1.getString("Email",null);
-                Email.setText(Eemail);
-
-                //    mailtx.setText(Eemail);
-                String wwebsite = sp1.getString("website",null);
-                website.setText(wwebsite);
-*/
-
-
-                //  Toast.makeText(AdverSize.this, ""+mediaObjects.size(), Toast.LENGTH_SHORT).show();
-
-
                 for (int i=0;i<response.body().size();i++) {
                     MediaObject fishData = new MediaObject();
                     fishData.setMediaName(response.body().get(i).getMediaName());
@@ -97,25 +66,14 @@ public class LiveFragment extends Fragment {
                     fishData.setMediaWidth(response.body().get(i).getMediaWidth());
                     data.add(fishData);
                     adaptorMedia.notifyDataSetChanged();
-
                 }
-
-
-
-
-
-
             }
 
             @Override
             public void onFailure(Call<ArrayList<MediaObject>> call, Throwable t) {
-
                 //Toast.makeText(getContext(), "Failed"+t.getMessage(), Toast.LENGTH_SHORT).show();
-
 
             }
         });
-
-
     }
 }

@@ -81,7 +81,10 @@
             android:name=".BottomNavActivity"
             android:label="@string/title_activity_bottom_nav" />
         <activity android:name=".EditMediaActivity" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity
+            android:name=".Main7Activity"
+            android:label="@string/title_activity_main7"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -100,5 +100,25 @@
     <style name="Switch" parent="Theme.AppCompat.Light">
 
         <item name="colorControlActivated" >#ff0000</item>
+    </style>
+
+    <style name="Widget.Design.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="android:colorPrimary" tools:targetApi="lollipop">@color/white</item>
+        <item name="android:colorControlActivated" tools:targetApi="lollipop">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="android:colorAccent" tools:targetApi="lollipop">@color/white</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:state_selected">true</item>
+
+
+    </style>
+    <style name="ActionButton" parent="@android:style/Widget.ActionButton">
+        <item name="android:drawablePadding">@dimen/action_button_padding</item>
+    </style>
+
+    <style name="Theme.MyTheme"
+        parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- other styles -->
+        <item name="android:actionButtonStyle">@style/ActionButton</item>
     </style>
 </resources>

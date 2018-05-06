@@ -8,4 +8,10 @@
         <item name="android:windowDrawsSystemBarBackgrounds">false</item>
     </style>
 
+    <style name="Widget.Design.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="colorControlActivated">@color/please</item>
+        <item name="android:colorAccent">@color/please</item>
+
+    </style>
+
 </resources>

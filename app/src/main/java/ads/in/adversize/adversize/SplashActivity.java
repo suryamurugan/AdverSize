@@ -41,6 +41,7 @@ UserLocalStore userLocalStore = new UserLocalStore(getApplicationContext());
 
             Toast.makeText(this, "empty", Toast.LENGTH_SHORT).show();
             Intent intent2 = new Intent(SplashActivity.this,Main2Activity.class);
+
             SplashActivity.this.startActivity(intent2);
             finish();
 
@@ -48,8 +49,8 @@ UserLocalStore userLocalStore = new UserLocalStore(getApplicationContext());
         else if (!(userLocalStore.getLoggedInUser() ==null)) {
 
             Toast.makeText(this, ""+userLocalStore.getLoggedInUser().username, Toast.LENGTH_SHORT).show();
-            //Intent intent = new Intent(SplashActivity.this, AdverSizeHomeNavDrawActivity.class);
-            Intent intent = new Intent(SplashActivity.this, BottomNavActivity.class);
+            /*Intent intent = new Intent(SplashActivity.this, AdverSizeHomeNavDrawActivity.class);*/
+            Intent intent = new Intent(SplashActivity.this, Main7Activity.class);
             SplashActivity.this.startActivity(intent);
             finish();
         }

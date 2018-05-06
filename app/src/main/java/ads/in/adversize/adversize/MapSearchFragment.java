@@ -50,20 +50,11 @@ import retrofit2.Response;
  */
 
 public class MapSearchFragment extends Fragment implements OnMapReadyCallback,GoogleMap.OnInfoWindowClickListener{
+
     private GoogleMap mMap;
-
-  //  PlaceAutocompleteFragment placeAutoComplete;
-   // HashMap<Marker, MediaObject> mDataMap = new HashMap<>();
-
     private UserService userService;
     String clickedMediaID;
 
-  //  final List<MediaObject> data = new ArrayList<>();
-
-   // LocationRequest mLocationRequest;
-    GoogleMap googleMap;
-    GoogleApiClient mGoogleApiClient;
-    PlaceSelectionListener placeSelectionListener;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
