@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ads.in.adversize.adversize.AddMediaLocation">
+    <LinearLayout
+        android:padding="5dp"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/tick"
+                    android:backgroundTint="@color/colorAccent"
+                    />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/tick"
+                    android:backgroundTint="@color/colorAccent"
+                    />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/tick"
+                    android:backgroundTint="@color/colorAccent"
+                    />
+
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/cabin"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="Media Details"/>
+
+                <TextView
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/cabin"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="Media Pricing"/>
+                <TextView
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/cabin"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="Media Location"/>
+            </TableRow>
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/finall"/>
+</LinearLayout>

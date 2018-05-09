@@ -126,7 +126,7 @@ UserLocalStore userLocalStore;
             fragment = new MapSearchFragment();
         }
         else if (id == R.id.profile_account) {
-            fragment = new ProfileAccountFragment();
+          //  fragment = new ProfileAccountFragment();
 
         } else if (id == R.id.contact_us) {
 

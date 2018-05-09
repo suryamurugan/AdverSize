@@ -258,7 +258,7 @@ public class MapSearchFragment extends Fragment implements OnMapReadyCallback,Go
                     // Position of Marker on Map
                     markerOptions.position(latLng);
                     // Adding Title to the Marker
-                    markerOptions.title(placeName + " : " + vicinity+","+mediaID);
+                    markerOptions.title(placeName + ":" + vicinity+","+mediaID);
                     // Adding Marker to the Camera.
                     Marker m = mMap.addMarker(markerOptions);
                     m.showInfoWindow();

@@ -20,8 +20,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import ads.in.adversize.adversize.fragment.*;
-import ads.in.adversize.adversize.fragment.HomeFragment;
 
 import static ads.in.adversize.adversize.R.color.white;
 
@@ -106,7 +104,7 @@ public class BottomNavActivity extends AppCompatActivity {
                     selectedFragment = new MapSearchFragment();
                     break;
                 case R.id.userpro:
-                    selectedFragment = new ProfileAccountFragment();
+                  //  selectedFragment = new ProfileAccountFragment();
                     break;
                 default:
                     selectedFragment = new HomeFragment();

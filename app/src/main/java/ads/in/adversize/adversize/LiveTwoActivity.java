@@ -17,6 +17,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,10 +48,12 @@ public class LiveTwoActivity extends AppCompatActivity  {
 
     TextView mediaid,medianame,dimensions,
     city,state,location,avalability,productid,vendorid;
-    ImageButton  mediaimage;
+    ImageView mediaimage;
     TextView landmark, totalcost, mainsize;
 
     Button editButton;
+
+    android.support.v7.app.ActionBar actionBar;
 
     private GoogleMap mMap;
     UserService userService;
@@ -69,6 +72,10 @@ public class LiveTwoActivity extends AppCompatActivity  {
 
         editButton = findViewById(R.id.editbutton);
 
+        actionBar = getSupportActionBar();
+
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
        /* SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);*/
@@ -77,7 +84,7 @@ public class LiveTwoActivity extends AppCompatActivity  {
         string= extras.getString("myjson");
         frommap = extras.getString("frommap");
 
-        Toast.makeText(this, ""+frommap, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this, ""+frommap, Toast.LENGTH_SHORT).show();
 
         mediaid= findViewById(R.id.mediaID);
         medianame = findViewById(R.id.mediaName);

@@ -46,8 +46,8 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/thumbnail"
@@ -60,18 +60,22 @@
 
 <LinearLayout
     android:background="#ffffff"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
 
     <TableLayout
         android:paddingLeft="10dp"
         android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
         <TableRow>
             <TextView
+                android:fontFamily="@font/cabin"
                 android:id="@+id/landmarktitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -84,11 +88,13 @@
             <LinearLayout
                 android:orientation="horizontal">
                 <TextView android:text=" :  "
+                    android:fontFamily="@font/cabin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:fontFamily="@font/cabin"
                     android:id="@+id/landmark"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:padding="5dp"
@@ -101,6 +107,7 @@
         </TableRow>
         <TableRow>
             <TextView
+                android:fontFamily="@font/cabin"
                 android:id="@+id/mediasizetitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -113,9 +120,11 @@
             <LinearLayout
                 android:orientation="horizontal">
                 <TextView android:text=" :  "
+                    android:fontFamily="@font/cabin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:fontFamily="@font/cabin"
                     android:id="@+id/size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -132,6 +141,7 @@
         </TableRow>
         <TableRow>
             <TextView
+                android:fontFamily="@font/cabin"
                 android:id="@+id/ava"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -143,6 +153,7 @@
            <LinearLayout
                android:orientation="horizontal">
                <TextView android:text=" :   "
+                   android:fontFamily="@font/cabin"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"/>
                <Switch

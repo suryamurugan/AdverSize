@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/action_name"
-        android:icon="@drawable/ic_profile"
+        android:icon="@drawable/ic_action_name"
         android:title="Text to be seen by user"
         app:showAsAction="always"
         android:orderInCategory="0"/>

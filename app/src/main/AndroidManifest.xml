@@ -37,11 +37,6 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity
-            android:name=".FullscreenActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_fullscreen"
-            android:theme="@style/FullscreenTheme" />
         <activity android:name=".Main2Activity" />
         <activity
             android:name=".SplashActivity"
@@ -59,7 +54,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Main5Activity" />
         <activity android:name=".MediaDetailsActivity" />
-        <activity android:name=".g" />
         <activity android:name=".Main6Activity" />
         <activity
             android:name=".MainNavigation"
@@ -67,10 +61,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".MapSearchActivity" />
-        <activity
-            android:name=".MainNav"
-            android:label="@string/title_activity_main_nav"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AdverSizeHomeNavDrawActivity"
             android:label="@string/title_activity_adver_size_home_nav_draw"
@@ -84,7 +74,11 @@
         <activity android:name=".RegisterActivity" />
         <activity
             android:name=".Main7Activity"
-            android:label="@string/title_activity_main7"></activity>
+            android:label="@string/title_activity_main7" />
+        <activity android:name=".Main8Activity" />
+        <activity android:name=".AddMediaDetails" />
+        <activity android:name=".AddMediaPricing" />
+        <activity android:name=".AddMediaLocation"></activity>
     </application>
 
 </manifest>

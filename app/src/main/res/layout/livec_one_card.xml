@@ -27,8 +27,8 @@
 
                 <ImageView
                     android:id="@+id/thumbnail"
-                    android:layout_width="125dp"
-                    android:layout_height="125dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
 
                     android:scaleType="centerCrop" />
@@ -47,26 +47,39 @@
                         android:layout_height="match_parent">
                         <TableRow>
                             <TextView
+                                android:fontFamily="@font/cabin"
                                 android:id="@+id/landmarktitle"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerHorizontal="true"
-                                android:padding="10dp"
+                                android:padding="3dp"
                                 android:text="Landmark"
                                 android:textStyle="bold"
                                 android:textAppearance="@style/TextAppearance.AppCompat" />
+
                             <TextView
+                                android:fontFamily="@font/cabin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:text=":"
+                                android:textStyle="bold"
+                                android:textAppearance="@style/TextAppearance.AppCompat" />
+
+                            <TextView
+                                android:fontFamily="@font/cabin"
                                 android:id="@+id/landmark"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_centerHorizontal="true"
-                                android:padding="10dp"
+                                android:padding="3dp"
                                 android:text="Media Name" android:textAppearance="@style/TextAppearance.AppCompat" />
 
 
                         </TableRow>
                         <TableRow>
                             <TextView
+                                android:fontFamily="@font/cabin"
                                 android:id="@+id/mediasizetitle"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -76,6 +89,16 @@
                                 android:textStyle="bold"
                                 android:textAppearance="@style/TextAppearance.AppCompat" />
                             <TextView
+                                android:fontFamily="@font/cabin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:text=":"
+                                android:textStyle="bold"
+                                android:textAppearance="@style/TextAppearance.AppCompat" />
+
+                            <TextView
+                                android:fontFamily="@font/cabin"
                                 android:id="@+id/size"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -87,6 +110,7 @@
                         </TableRow>
                         <TableRow>
                             <TextView
+                                android:fontFamily="@font/cabin"
                                 android:id="@+id/totalCost"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -96,6 +120,16 @@
                                 android:textStyle="bold"
                                 android:textAppearance="@style/TextAppearance.AppCompat" />
                             <TextView
+                                android:fontFamily="@font/cabin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:text=":"
+                                android:textStyle="bold"
+                                android:textAppearance="@style/TextAppearance.AppCompat" />
+
+                            <TextView
+                                android:fontFamily="@font/cabin"
                                 android:id="@+id/cost"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"

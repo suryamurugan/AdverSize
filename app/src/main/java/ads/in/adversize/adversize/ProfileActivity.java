@@ -36,6 +36,12 @@ public class ProfileActivity extends AppCompatActivity {
 
     private Button changepassword;
 
+    ///
+    TextView profileusername,profilecompany,profilecity,profilemail,profilewebsite;
+
+
+    //////
+
     UserLocalStore userLocalStore;
     UserService userService;
     User user;
@@ -45,8 +51,8 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        actionBar = getSupportActionBar();
 
-        actionBar= getSupportActionBar();
 
 
         Typeface tef  = Typeface.createFromAsset(getAssets(),"cabin_semibold.ttf");
@@ -59,16 +65,27 @@ public class ProfileActivity extends AppCompatActivity {
         maintitle.setText("AdverSize");
         maintitle.setGravity(Gravity.CENTER);
         maintitle.setTextSize(22);
-        maintitle.setPadding(10,2, 5,2);
-        maintitle.setTextColor(Color.parseColor("#171717"));
+        maintitle.setPadding(-5,2, 100,2);
+        maintitle.setTextColor(Color.parseColor("#ffffff"));
         maintitle.setTypeface(tef);
        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         actionBar.setCustomView(maintitle);
+
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         userService = ApiUtils.getUserService();
         userLocalStore = new UserLocalStore(ProfileActivity.this);
 
         user = userLocalStore.getLoggedInUser();
+
+        profileusername = findViewById(R.id.user_profile_name);
+        profilecompany  = findViewById(R.id.Company);
+        profilecity = findViewById(R.id.city);
+        profilemail = findViewById(R.id.Email);
+        profilewebsite = findViewById(R.id.website);
+
+        profileusername.setText(user.username);
+        profilemail.setText(user.useremail);
 
         changepassword = findViewById(R.id.changePassword);
 

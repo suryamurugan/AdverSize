@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import ads.in.adversize.adversize.model.ResObj;
 import ads.in.adversize.adversize.remote.ApiUtils;
@@ -20,7 +21,7 @@ public class Main2Activity extends AppCompatActivity {
 boolean STATE=false;
 
     private Button login;
-    private Button reg;
+    private TextView reg;
     private EditText usernameedit;
     private EditText passwordedit;
     private UserService userService;
@@ -123,10 +124,10 @@ boolean STATE=false;
 //
                         ///userLocalStore.storeUserData(returnedUser);
                         User user = new User(useremail, password);
-                        String vendorid  = resObj.getVendorID();
+
                         user.username = resObj.getFirstName()+" "+resObj.getLastName();
-                        user.vedorid=  Integer.parseInt(vendorid);
-                        Toast.makeText(Main2Activity.this, ""+vendorid, Toast.LENGTH_SHORT).show();
+                        user.vedorid= Integer.parseInt(resObj.getVendorID());
+                        //Toast.makeText(Main2Activity.this, ""+, Toast.LENGTH_SHORT).show();
                         UserLocalStore userLocalStore = new UserLocalStore(getApplicationContext());
                         userLocalStore.storeUserData(user);
 
@@ -154,7 +155,10 @@ boolean STATE=false;
 
             @Override
             public void onFailure(retrofit2.Call<ResObj> call, Throwable t) {
-                Toast.makeText(Main2Activity.this, t.getMessage()+"screwed", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(Main2Activity.this, t.getMessage()+"screwed", Toast.LENGTH_SHORT).show();
+
+                Intent intent= new Intent(Main2Activity.this,SplashActivity.class);
+                startActivity(intent);
 
             }
         });

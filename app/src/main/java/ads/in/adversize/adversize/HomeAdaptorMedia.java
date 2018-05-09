@@ -76,7 +76,7 @@ public class HomeAdaptorMedia extends RecyclerView.Adapter<RecyclerView.ViewHold
                 String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
                 //  if (date.compareTo("2018-04-29")==1){
-                Toast.makeText(context, "zer"+date.compareTo("2018-04-28"), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(context, "zer"+date.compareTo("2018-04-28"), Toast.LENGTH_SHORT).show();
                 //   }
                 //   else{
 

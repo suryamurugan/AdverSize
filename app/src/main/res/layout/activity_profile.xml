@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#171717"
     tools:context="ads.in.adversize.adversize.ProfileActivity">
 
 
@@ -15,9 +16,10 @@
         <ImageView
             android:id="@+id/header_cover_image"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/pattern"
+            android:background="#171717"
+
             />
 
         <ImageButton
@@ -42,6 +44,7 @@
 
             android:layout_height="wrap_content">
             <RelativeLayout
+                android:background="#171717"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -69,14 +72,14 @@
                     android:src="@drawable/ic_user_profile" />
 
                 <TextView
-
+                    android:fontFamily="@font/cabin"
                     android:id="@+id/user_profile_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="55dp"
+                    android:layout_marginTop="70dp"
                     android:text="Sharath Patil"
-                    android:textColor="@color/d"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -99,9 +102,10 @@
                                 android:layout_gravity="center"
                                 android:src="@drawable/ic_001_buildings"/>
                             <TextView
+                                android:fontFamily="@font/cabin"
                                 android:paddingLeft="10dp"
                                 android:id="@+id/Company"
-                                android:textColor="@color/d"
+                                android:textColor="@color/white"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="AdverSize LTD"
@@ -118,6 +122,7 @@
                                 android:layout_gravity="center"
                                 android:src="@drawable/ic_004_map"/>
                             <TextView
+                                android:fontFamily="@font/cabin"
                                 android:paddingLeft="10dp"
                                 android:id="@+id/city"
                                 android:layout_width="wrap_content"
@@ -126,7 +131,7 @@
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="3dp"
                                 android:text="Mysore"
-                                android:textColor="@color/d"
+                                android:textColor="@color/white"
                                 android:textSize="16sp" />
 
 
@@ -140,13 +145,14 @@
                                 android:layout_gravity="center"
                                 android:src="@drawable/ic_005_email"/>
                             <TextView
+                                android:fontFamily="@font/cabin"
                                 android:id="@+id/Email"
                                 android:paddingLeft="10dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="3dp"
                                 android:text="sharath@adversize.in"
-                                android:textColor="@color/d"
+                                android:textColor="@color/white"
                                 android:textSize="16sp" />
 
 
@@ -162,6 +168,7 @@
                                 android:src="@drawable/ic_003_http"/>
 
                             <TextView
+                                android:fontFamily="@font/cabin"
                                 android:paddingLeft="10dp"
                                 android:id="@+id/website"
                                 android:layout_width="wrap_content"
@@ -170,7 +177,7 @@
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="3dp"
                                 android:text="https://adversize.in"
-                                android:textColor="@color/d"
+                                android:textColor="@color/white"
                                 android:textSize="16sp" />
 
                         </TableRow>
@@ -180,28 +187,34 @@
 
 
                     <Button
-
-                        android:layout_marginTop="10dp"
-
+                        android:fontFamily="@font/cabin"
+                        android:background="@drawable/h_button"
+                        android:layout_marginTop="30dp"
                         android:layout_marginLeft="115dp"
                         android:layout_marginRight="115dp"
                         android:layout_marginBottom="10dp"
                         android:text="Edit Profile"
-
+                        android:textColor="@color/white"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="wrap_content"
                         />
                     <Button
+                        android:fontFamily="@font/cabin"
+                        android:textColor="@color/white"
+                        android:background="@drawable/h_button"
                         android:id="@+id/changePassword"
                         android:layout_marginLeft="115dp"
                         android:layout_marginRight="115dp"
-                        android:layout_marginBottom="20dp"
+                        android:layout_marginBottom="10dp"
 
                         android:text="Change Password"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="wrap_content"
                         />
                     <Button
+                        android:fontFamily="@font/cabin"
+                        android:textColor="@color/white"
+                        android:background="@drawable/h_button"
                         android:id="@+id/log_out"
                         android:layout_marginLeft="115dp"
                         android:layout_marginRight="115dp"
@@ -209,7 +222,7 @@
 
                         android:text="Log Out"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="wrap_content"
                         />
 
 
@@ -229,5 +242,4 @@
 
     </RelativeLayout>
 
-
-</LinearLayout>
+</ScrollView>

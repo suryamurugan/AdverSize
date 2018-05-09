@@ -58,7 +58,7 @@ public class Main7Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main7);
 
         actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ededed")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#171717")));
 
 
 
@@ -74,6 +74,7 @@ public class Main7Activity extends AppCompatActivity {
         bnve.enableShiftingMode(false);
         bnve.enableItemShiftingMode(false);
         bnve.setTextVisibility(true);
+        bnve.setTypeface(tf);
         //bnve.setPadding(4,4,4,4);
        // bnve.setIconSize(50,50);
         bnve.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -104,7 +105,7 @@ public class Main7Activity extends AppCompatActivity {
         maintitle.setGravity(Gravity.CENTER);
         maintitle.setTextSize(22);
         maintitle.setPadding(100,2,5,2);
-        maintitle.setTextColor(Color.parseColor("#171717"));
+        maintitle.setTextColor(Color.parseColor("#ffffff"));
         maintitle.setTypeface(tef);
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         actionBar.setCustomView(maintitle);
@@ -158,37 +159,51 @@ public class Main7Activity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment selectedFragment = null;
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             switch (item.getItemId()) {
 
                 case R.id.home:
-                    Toast.makeText(Main7Activity.this, "done", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(Main7Activity.this, "done", Toast.LENGTH_SHORT).show();
                     selectedFragment =  new ads.in.adversize.adversize.HomeFragment();
+
+                    transaction.replace(R.id.frame_layout, selectedFragment);
+                    transaction.commit();
                     break;
                   /*  mTextMessage.setText(R.string.title_home);*/
                 // return true;
                 case R.id.livecamp:
                     selectedFragment = new LiveFragment();
+
+                    transaction.replace(R.id.frame_layout, selectedFragment);
+                    transaction.commit();
                     break;
                    /* mTextMessage.setText(R.string.title_dashboard);
                     return true;*/
                 case R.id.addmed:
-                    selectedFragment = new AddMediaFragment();
+                  /*  selectedFragment = new AddMediaFragment();*/
+                    selectedFragment = new HomeFragment();
+                    Intent intent= new Intent(Main7Activity.this,AddMediaDetails.class);
+                    startActivity(intent);
                     break;
 
                 case R.id.map_ser:
                     selectedFragment = new MapSearchFragment();
+
+                    transaction.replace(R.id.frame_layout, selectedFragment);
+                    transaction.commit();
                     break;
                 case R.id.userpro:
-                    selectedFragment = new ProfileAccountFragment();
+                   // selectedFragment = new ProfileAccountFragment();
                     break;
                 default:
-                    selectedFragment = new ads.in.adversize.adversize.fragment.HomeFragment();
+                    selectedFragment = new HomeFragment();
+
+                    transaction.replace(R.id.frame_layout, selectedFragment);
+                    transaction.commit();
                    /* mTextMessage.setText(R.string.title_notifications);
                     return true;*/
             }
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.frame_layout, selectedFragment);
-            transaction.commit();
+
             return true;
         }
     };
