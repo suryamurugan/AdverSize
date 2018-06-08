@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="25dp"
-        android:text="Happy to see you! Let's get to know each other."/>
+        android:text="You are one step away to get clients from us."/>
 
     <TextView
         android:textColor="#ffffff"
@@ -145,17 +145,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"/>
-    <EditText
-        android:backgroundTint="@color/colorAccent"
-        android:drawableTint="#ffffff"
-        android:textColorHint="#ffffff"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:fontFamily="@font/cabin"
-        android:textStyle="normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Website"/>
+
     <EditText
         android:backgroundTint="@color/colorAccent"
         android:drawableTint="#ffffff"
@@ -179,7 +169,8 @@
         android:layout_height="wrap_content"
         android:hint="Confirm Password"/>
 
-    <RadioButton
+    <CheckBox
+        android:id="@+id/iagree"
         android:textColorLink="@color/white"
         android:textColorHighlight="@color/white"
         android:textColorHint="@color/white"

@@ -144,7 +144,7 @@ public class Main7Activity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_name) {
-            Toast.makeText(this, "Clicked BRo", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Clicked BRo", Toast.LENGTH_SHORT).show();
             Intent intent= new Intent(Main7Activity.this,ProfileActivity.class);
             startActivity(intent);
             return true;

@@ -20,8 +20,8 @@ public class Main2Activity extends AppCompatActivity {
 
 boolean STATE=false;
 
-    private Button login;
-    private TextView reg;
+    private Button login,register;
+
     private EditText usernameedit;
     private EditText passwordedit;
     private UserService userService;
@@ -42,7 +42,8 @@ boolean STATE=false;
         usernameedit =findViewById(R.id.username);
         passwordedit = findViewById(R.id.password);
         login = findViewById(R.id.login);
-        reg = findViewById(R.id.reg);
+        register = findViewById(R.id.registerButton);
+
 
         // Login Button Listner //
         login.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +59,7 @@ boolean STATE=false;
             });
 
         // Register Button Listner //
-        reg.setOnClickListener(new View.OnClickListener() {
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 /*                retrofit2.Call<ResObj> call = userService.login(
